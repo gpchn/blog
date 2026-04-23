@@ -1,0 +1,32 @@
+baseURL = "https://252123.xyz/"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
+title = "gpchn 栖息地"
+theme = "stack"
+
+# 优化中文排版（避免自动换行问题）
+hasCJKLanguage = true
+
+# 配置默认语言的中文界面
+[languages.zh-cn]
+languageName = "中文"
+title = "gpchn 栖息地"
+weight = 1
+[languages.zh-cn.params]
+description = "年轻的小伙儿渴望建立功勋"
+# 侧边栏副标题
+sidebarSubtitle = "真的有人会看这个吗"
+
+# 菜单项
+[[languages.zh-cn.menu.main]]
+name = "首页"
+url = "/"
+weight = 1
+[[languages.zh-cn.menu.main]]
+name = "文章"
+url = "/posts/"
+weight = 2
+[[languages.zh-cn.menu.main]]                                 
+name = "关于"
+url = "/about/"
+weight = 3
