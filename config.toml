@@ -13,12 +13,11 @@ languageName = "中文"
 title = "gpchn 栖息地"
 weight = 1
 [languages.zh-cn.params]
-sidebar = {
-    avatar = "/images/avatar.jpeg"
-}
 description = "年轻的小伙儿渴望建立功勋"
 # 侧边栏副标题
 sidebarSubtitle = "真的有人会看这个吗"
+[languages.zh-cn.params.sidebar]
+avatar = "/images/avatar.jpeg"
 
 # 菜单项
 [[languages.zh-cn.menu.main]]
@@ -29,7 +28,8 @@ weight = 1
 name = "文章"
 url = "/posts/"
 weight = 2
-[[languages.zh-cn.menu.main]]                                 
+[[languages.zh-cn.menu.main]]
 name = "关于"
 url = "/about/"
 weight = 3
+
