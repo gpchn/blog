@@ -34,14 +34,15 @@ hasCJKLanguage = true
     isCaseSensitive = false
     shouldSort = true
 
-  # 评论区（这里先关闭，以后开启时取消注释）
-  # comments = true
-  # [params.giscus]
-  #   repo = "你的用户名/仓库名"
-  #   repoID = "你的repoID"
-  #   category = "Announcements"
-  #   categoryID = "你的categoryID"
-  #   mapping = "pathname"
+  # 评论区
+  comments = true
+  [params.giscus]
+    repo = "gpchn/blog-comments"
+    repoID = "R_kgDOSLoubw"
+    category = "Announcements"
+    categoryID = "DIC_kwDOSLoub84C7nHP"
+    mapping = "pathname"
+    lang = "zh-CN"
 
 # 菜单
 [[menu.main]]
