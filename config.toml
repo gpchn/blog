@@ -1,0 +1,39 @@
+baseURL = "https://252123.xyz/"
+title = "gpchn 栖息地"
+theme = "PaperMod"
+
+languageCode = "zh-CN"
+hasCJKLanguage = true
+paginate = 10
+
+[params]
+  author = "gpchn"
+  description = "年轻的小伙儿渴望建立功勋"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowCodeCopyButtons = true
+
+  # 头像
+  avatar = "/images/avatar.jpeg"
+
+  # 网站图标
+  assets = {
+    favicon = "/favicon-32x32.ico",
+    favicon16x16 = "/favicon-16x16.ico",
+    favicon32x32 = "/favicon-32x32.ico"
+    #appleTouchIcon = "/apple-touch-icon.png"
+  }
+
+# 菜单（所有语言共享）
+[[menu.main]]
+  name = "首页"
+  url = "/"
+  weight = 1
+[[menu.main]]
+  name = "归档"
+  url = "/archives"
+  weight = 2
+[[menu.main]]
+  name = "关于"
+  url = "/about"
+  weight = 3
