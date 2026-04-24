@@ -37,6 +37,17 @@ hasCJKLanguage = true
   # 评论区（全局启用）
   comments = true
 
+  [params.giscus]
+    repo = "gpchn/blog-comments"
+    repoID = "R_kgDOSLoubw"
+    category = "Announcements"
+    categoryID = "DIC_kwDOSLoub84C7nHP"
+    mapping = "pathname"
+    lang = "zh-CN"
+    inputPosition = "bottom"
+    loading = "lazy"
+    theme = "preferred_color_scheme"
+
 # 菜单
 [[menu.main]]
   name = "首页"
