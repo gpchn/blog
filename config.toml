@@ -3,13 +3,44 @@ title = "gpchn 栖息地"
 theme = "hugo-theme-next"
 
 languageCode = "zh-CN"
-#defaultContentLanguage = "zh-cn"
+defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
-
-# 每页显示文章数
 paginate = 10
 
-# 菜单
+# 中文语言配置
+[languages.zh-cn]
+    languageName = "简体中文"
+    weight = 1
+    [languages.zh-cn.params]
+        scheme = "Gemini"
+        description = "年轻的小伙儿渴望建立功勋"
+        subtitle = "真的有人会看这个吗"
+        author = "gpchn"
+        avatar = { url = "/images/avatar.jpeg", rounded = true, rotated = true }
+        favicon = { icon = "/favicon-32x32.ico", small = "/favicon-16x16.ico", medium = "/favicon-32x32.ico" }
+        darkmode = true
+        [languages.zh-cn.params.sidebar]
+            position = "left"
+            display = "post"
+        [languages.zh-cn.params.postMeta]
+            itemText = true
+            created = true
+            updated = true
+            categories = true
+            wordCount = true
+            readTime = true
+        [languages.zh-cn.params.codeblock]
+            style = "mac"
+            copyBtn = true
+        [languages.zh-cn.params.backTop]
+            enable = true
+            scrollpercent = true
+        [languages.zh-cn.params.readingProgress]
+            enable = true
+            start = "left"
+            position = "top"
+
+# 菜单（可直接放根级，所有语言生效）
 [[menu.main]]
     identifier = "home"
     name = "首页"
@@ -30,71 +61,3 @@ paginate = 10
     pageRef = "/about"
     pre = "user"
     weight = 3
-
-[params]
-    # 页面方案（必填）可选：Muse / Mist / Pisces / Gemini
-    scheme = "Gemini"
-
-    # 头像配置（必须是对象格式）
-    [params.avatar]
-        url = "/images/avatar.jpeg"
-        rounded = true
-        rotated = true
-
-    # 站点信息
-    description = "年轻的小伙儿渴望建立功勋"
-    subtitle = "真的有人会看这个吗"
-    author = "gpchn"
-
-    [params.favicon]
-        icon = "/favicon-32x32.ico"             # 默认的 favicon 图标
-        small = "/favicon-16x16.ico" # 小尺寸图标
-        medium = "/favicon-32x32.ico"# 中等尺寸图标
-
-    # 暗色模式
-    darkmode = true
-
-    # 侧边栏
-    [params.sidebar]
-        position = "left"
-        display = "post"
-
-    # 文章元信息显示
-    [params.postMeta]
-        itemText = true
-        created = true
-        updated = true
-        categories = true
-        wordCount = true
-        readTime = true
-
-    # 代码块风格
-    [params.codeblock]
-        style = "mac"
-        copyBtn = true
-
-    # 返回顶部
-    [params.backTop]
-        enable = true
-        scrollpercent = true
-
-    # 阅读进度条
-    [params.readingProgress]
-        enable = true
-        start = "left"
-        position = "top"
-
-    # ---------------------------------------
-    # 评论系统（Giscus）
-    # 等你拿到 repoId 等参数后，取消下面注释并填入即可
-    # ---------------------------------------
-    # [params.comments]
-    #     enable = true
-    #     active = "giscus"
-    # [params.giscus]
-    #     repo = "gpchn/blog"
-    #     repoId = ""
-    #     category = "Announcements"
-    #     categoryId = ""
-    #     mapping = "pathname"
-    #     theme = "preferred_color_scheme"
