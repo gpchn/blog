@@ -17,14 +17,9 @@ paginate = 10
   avatar = "/images/avatar.jpeg"
 
   # 网站图标
-  assets = {
-    favicon = "/favicon-32x32.ico",
-    favicon16x16 = "/favicon-16x16.ico",
-    favicon32x32 = "/favicon-32x32.ico"
-    #appleTouchIcon = "/apple-touch-icon.png"
-  }
+  assets = { favicon = "/favicon-32x32.ico", favicon16x16 = "/favicon-16x16.ico", favicon32x32 = "/favicon-32x32.ico" }
 
-# 菜单（所有语言共享）
+# 菜单
 [[menu.main]]
   name = "首页"
   url = "/"
