@@ -35,6 +35,7 @@ hasCJKLanguage = true
     shouldSort = true
 
   # 评论区
+  # 全局启用评论功能
   comments = true
   [params.giscus]
     repo = "gpchn/blog-comments"
@@ -43,6 +44,13 @@ hasCJKLanguage = true
     categoryID = "DIC_kwDOSLoub84C7nHP"
     mapping = "pathname"
     lang = "zh-CN"
+
+    # 提高稳定性和体验
+    mapping = "\"pathname\""
+    lang = "\"zh-CN\""
+    inputPosition = "\"bottom\""
+    loading = "\"lazy\""
+    theme = "\"preferred_color_scheme\""
 
 # 菜单
 [[menu.main]]
