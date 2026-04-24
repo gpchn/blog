@@ -3,7 +3,7 @@ title = "gpchn 栖息地"
 theme = "hugo-theme-next"
 
 languageCode = "zh-CN"
-defaultContentLanguage = "zh-cn"
+#defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
 
 # 每页显示文章数
