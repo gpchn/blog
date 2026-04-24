@@ -26,7 +26,7 @@ hasCJKLanguage = true
 
 [params]
     # 头像（把头像图放到 static/images/ 下）
-    avatar = "/images/avatar.jpeg"
+    avatar = { url = "/images/avatar.jpeg" }
     # 站点描述（会出现在 meta 信息和页脚）
     description = "年轻的小伙儿渴望建立功勋"
     # 侧边栏/页脚副标题
