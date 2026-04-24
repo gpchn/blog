@@ -1,7 +1,7 @@
 ---
 title: PyWebview 打包安卓全过程记录
 date: 2025-07-27 22:05:12
-tags: [Python, PyWebview, 安卓]
+tags: [" [Python, PyWebview, 安卓]"]
 ---
 
 [PyWebview 文档](https://pywebview.flowrl.com/guide/freezing.html)中简单介绍了如何将 PyWebview 程序打包为安卓应用，但缺乏详细过程，网上相关文档也不多，因此记录一下整个打包流程，分享给有需要的人。
