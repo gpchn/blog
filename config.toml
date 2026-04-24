@@ -4,7 +4,9 @@ theme = "PaperMod"
 
 languageCode = "zh-CN"
 hasCJKLanguage = true
-paginate = 10
+
+[pagination]
+  pagerSize = 10
 
 [params]
   author = "gpchn"
