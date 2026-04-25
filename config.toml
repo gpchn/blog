@@ -5,11 +5,9 @@ theme = "PaperMod"
 languageCode = "zh-CN"
 hasCJKLanguage = true
 
-# 分页设置
 [pagination]
   pagerSize = 10
 
-# 输出格式（需要 RSS 和搜索索引）
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
@@ -17,27 +15,30 @@ hasCJKLanguage = true
   author = "gpchn"
   description = "年轻的小伙儿渴望建立功勋"
 
-  # 阅读时间、分享、代码复制
   ShowReadingTime = true
   ShowShareButtons = true
   ShowCodeCopyButtons = true
 
-  # 头像
   avatar = "/images/avatar.jpeg"
-
-  # 网站图标
   assets = { favicon = "/favicon-32x32.ico", favicon16x16 = "/favicon-16x16.ico", favicon32x32 = "/favicon-32x32.ico" }
 
-  # 搜索功能（PaperMod 内置）
   ShowSearch = true
   [params.fuseOpts]
     isCaseSensitive = false
     shouldSort = true
 
-  # 评论区（全局启用）
   comments = true
+  [params.giscus]
+    repo = "gpchn/blog-comments"
+    repoId = "R_kgDOSLoubw"
+    category = "Announcements"
+    categoryId = "DIC_kwDOSLoub84C7nHP" 
+    mapping = "pathname"
+    lang = "zh-CN"
+    inputPosition = "top"
+    loading = "lazy"
+    theme = "preferred_color_scheme"
 
-# 菜单
 [[menu.main]]
   name = "首页"
   url = "/"
