@@ -1,7 +1,7 @@
 ---
 title: 使用 oh-my-posh 美化 CMD 和 PowerShell
 date: 2025-02-09 15:04:12
-tags: [" [终端, 美化]"]
+tags: ["终端", "美化"]
 ---
 
 我个人的使用习惯，在 Linux 上使用 zsh，在 Windows 上 CMD 和 PowerShell 混用。Linux 终端的美化非常好办，安装 oh-my-zsh 插件，搭配 powerlevel10k 主题，可以说是一键美化。
