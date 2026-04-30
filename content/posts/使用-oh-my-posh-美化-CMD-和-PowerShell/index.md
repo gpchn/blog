@@ -6,7 +6,7 @@ tags: ["终端", "美化"]
 
 我个人的使用习惯，在 Linux 上使用 zsh，在 Windows 上 CMD 和 PowerShell 混用。Linux 终端的美化非常好办，安装 oh-my-zsh 插件，搭配 powerlevel10k 主题，可以说是一键美化。
 
-![Linux 美化效果](images/使用-oh-my-posh-美化-CMD-和-PowerShell/1.png)
+![Linux 美化效果](1.png)
 
 但 Windows 终端，愿意折腾的人不多，顶多从 Microsoft Store 下载一个 Windows Terminal。如何真正强化 CMD 和 PowerShell，使其拥有比拟 zsh 的体验呢？[oh-my-posh](https://ohmyposh.dev/) 就是答案。
 
@@ -95,7 +95,7 @@ Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
 美化效果（powerlevel10k_rainbow 主题下）：
 
-![PowerShell 美化效果](images/使用-oh-my-posh-美化-CMD-和-PowerShell/2.png)
+![PowerShell 美化效果](2.png)
 
 ### 选择主题 & 安装插件
 
@@ -126,7 +126,7 @@ load(io.popen('oh-my-posh init cmd -c C:\\Users\\gpchn\\AppData\\Local\\Programs
 
 美化效果：
 
-![CMD 美化效果](images/使用-oh-my-posh-美化-CMD-和-PowerShell/3.png)
+![CMD 美化效果](3.png)
 
 clink 是个很强大的工具，可使用右箭头补全命令，还有更多功能可自行探索。
 
@@ -150,7 +150,7 @@ doskey less=type
 
 这是一些常用 Linux 命令对应的 CMD 命令，你可以根据需要自行修改。保存并关闭文件，重新打开 CMD 终端，即可使用这些别名。
 
-![展示别名](images/使用-oh-my-posh-美化-CMD-和-PowerShell/4.png)
+![展示别名](4.png)
 
 ## 4. 拓展：GitBash 美化
 

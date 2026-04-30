@@ -1,7 +1,9 @@
 ---
+
 title: PyWebview 打包安卓全过程记录
 date: 2025-07-27 22:05:12
-tags: ["Python", "PyWebview", "安卓"]
+tags: ["Python", "PyWebview"]
+
 ---
 
 [PyWebview 文档](https://pywebview.flowrl.com/guide/freezing.html)中简单介绍了如何将 PyWebview 程序打包为安卓应用，但缺乏详细过程，网上相关文档也不多，因此记录一下整个打包流程，分享给有需要的人。
@@ -12,7 +14,7 @@ tags: ["Python", "PyWebview", "安卓"]
 
 官网对 Windows 系统构建安卓应用的描述为：
 
-> To use buildozer in Windows you need first to enable Windows Subsystem for Linux (WSL) and install a Linux distribution: https://docs.microsoft.com/en-us/windows/wsl/install.
+> To use buildozer in Windows you need first to enable Windows Subsystem for Linux (WSL) and install a Linux distribution: <https://docs.microsoft.com/en-us/windows/wsl/install>.
 >
 > These instructions were tested with WSL 1 and Ubuntu 18.04 LTS, and WSL2 with Ubuntu 20.04 and 22.04.
 >
@@ -22,12 +24,12 @@ tags: ["Python", "PyWebview", "安卓"]
 >
 > For debugging, WSL does not have direct access to USB. Copy the .apk file to the Windows partition and run ADB (Android Debug Bridge) from a Windows prompt. ADB is part of Android Studio, if you do not have this installed you can install just the platform tools which also contain ADB.
 >
-> Go to https://developer.android.com/studio/releases/platform-tools and click on “Download SDK Platform-Tools for Windows”.
+> Go to <https://developer.android.com/studio/releases/platform-tools> and click on “Download SDK Platform-Tools for Windows”.
 > Unzip the downloaded file to a new folder. For example, “C:\platform-tools”.
 
 翻译：
 
-> 若要在 Windows 中使用 buildozer，首先需要启用适用于 Linux 的 Windows 子系统 （WSL） 并安装 Linux 发行版：https://docs.microsoft.com/en-us/windows/wsl/install。
+> 若要在 Windows 中使用 buildozer，首先需要启用适用于 Linux 的 Windows 子系统 （WSL） 并安装 Linux 发行版：<https://docs.microsoft.com/en-us/windows/wsl/install。>
 >
 > 这些说明在 WSL 1 和 Ubuntu 18.04 LTS 上进行了测试，并在 WSL2 上使用 Ubuntu 20.04 和 22.04 进行了测试。
 >
@@ -37,7 +39,7 @@ tags: ["Python", "PyWebview", "安卓"]
 >
 > 对于调试，WSL 无法直接访问 USB。将.apk 文件复制到 Windows 分区，然后从 Windows 提示符运行 ADB（Android 调试桥）。ADB 是 Android Studio 的一部分，如果您没有安装它，您可以只安装也包含 ADB 的平台工具。
 >
-> 转到 https://developer.android.com/studio/releases/platform-tools 并单击“下载适用于 Windows 的 SDK 平台工具”。
+> 转到 <https://developer.android.com/studio/releases/platform-tools> 并单击“下载适用于 Windows 的 SDK 平台工具”。
 > 将下载的文件解压缩到新文件夹中。例如，“C：\platform-tools”。
 
 因此，我们应当先安装 wsl 版本的 Ubuntu，且只能安装 20.04 或 22.04（在 wsl2 中）。
@@ -48,16 +50,16 @@ tags: ["Python", "PyWebview", "安卓"]
 
 1. Ctrl + Shift + Esc 打开任务管理器，点击`性能`选项卡，查看 CPU 详细信息，其中有一条名为`虚拟化`的条目，如显示`已启用`，说明虚拟化已开启，可以继续安装。如果显示`已禁用`，则需要开启虚拟化，具体操作请自行搜索。
 
-![虚拟化](images/PyWebview-打包安卓全过程记录/1.png)
+![虚拟化](1.png)
 
-2. Windows + R 打开运行，输入 `control` 打开控制面板 -> 程序 -> 启用或关闭 Windows 功能，打开 `适用于 Linux 的 Windows 子系统` 和 `虚拟机平台` 两项功能。
+1. Windows + R 打开运行，输入 `control` 打开控制面板 -> 程序 -> 启用或关闭 Windows 功能，打开 `适用于 Linux 的 Windows 子系统` 和 `虚拟机平台` 两项功能。
 
-![控制面板](images/PyWebview-打包安卓全过程记录/2.png)
-![Windows 功能](images/PyWebview-打包安卓全过程记录/3.png)
+![控制面板](2.png)
+![Windows 功能](3.png)
 
-3. 打开 Microsoft Store，搜索 `ubuntu`，安装 `Ubuntu 20.04.6 LTS` 或 `Ubuntu 22.04.5 LTS`。等待安装完成，自动弹出一个命令行，按照提示输出初始用户名和密码（输密码时不会显示字符）。
+1. 打开 Microsoft Store，搜索 `ubuntu`，安装 `Ubuntu 20.04.6 LTS` 或 `Ubuntu 22.04.5 LTS`。等待安装完成，自动弹出一个命令行，按照提示输出初始用户名和密码（输密码时不会显示字符）。
 
-![Ubuntu](images/PyWebview-打包安卓全过程记录/4.png)
+![Ubuntu](4.png)
 
 #### 1.2 安装依赖环境
 
@@ -104,46 +106,40 @@ pip3 install --user --upgrade buildozer
 官网原文：
 
 > 1. Buildozer will try to guess the version of your application, by searching a line like **version** = “1.0.3” in your main.py. Ensure you have one at the start of your application. It is not mandatory but heavily advised.
->
 > 2. Create a buildozer.spec file, with:
 >
 > ```bash
 > buildozer init
 > ```
 >
-> 3. Edit the buildozer.spec according to the Specifications. You should at least change the title, package.name and package.domain in the [app] section.
->
-> 4. Start a Android/debug build with:
+> 1. Edit the buildozer.spec according to the Specifications. You should at least change the title, package.name and package.domain in the \[app] section.
+> 2. Start a Android/debug build with:
 >
 > ```bash
 > buildozer -v android debug
 > ```
 >
-> 5. Now it’s time for a coffee / tea, or a dinner if you have a slow computer. The first build will be slow, as it will download the Android SDK, NDK, and others tools needed for the compilation. Don’t worry, thoses files will be saved in a global directory and will be shared across the different project you’ll manage with Buildozer.
->
-> 6. At the end, you should have an APK or AAB file in the bin/ directory.
+> 1. Now it’s time for a coffee / tea, or a dinner if you have a slow computer. The first build will be slow, as it will download the Android SDK, NDK, and others tools needed for the compilation. Don’t worry, thoses files will be saved in a global directory and will be shared across the different project you’ll manage with Buildozer.
+> 2. At the end, you should have an APK or AAB file in the bin/ directory.
 
 翻译：
 
 > 1. Buildozer 将尝试通过搜索 像 **version** = “1.0.3” 这样的行在您的 main.py 中。确保您在 申请的开始。这不是强制性的，但强烈建议。
->
 > 2. 创建一个 buildozer.spec 文件，其中包含：
 >
 > ```bash
 > buildozer init
 > ```
 >
-> 3. 根据规范编辑 buildozer.spec。你应该 至少更改 [app] 部分中的标题、package.name 和 package.domain。
->
-> 4. 使用以下命令启动 Android/调试版本：
+> 1. 根据规范编辑 buildozer.spec。你应该 至少更改 \[app] 部分中的标题、package.name 和 package.domain。
+> 2. 使用以下命令启动 Android/调试版本：
 >
 > ```bash
 > buildozer -v android debug
 > ```
 >
-> 5. 现在是时候喝杯咖啡/茶了，或者如果你的电脑速度很慢，可以吃一顿晚餐。 第一个版本会很慢，因为它将下载 Android SDK、NDK 和 编译所需的其他工具。 别担心，这些文件将保存在全局目录中，并且会 在您将使用 Buildozer 管理的不同项目中共享。
->
-> 6. 最后，您应该在 bin/ 目录中有一个 APK 或 AAB 文件。
+> 1. 现在是时候喝杯咖啡/茶了，或者如果你的电脑速度很慢，可以吃一顿晚餐。 第一个版本会很慢，因为它将下载 Android SDK、NDK 和 编译所需的其他工具。 别担心，这些文件将保存在全局目录中，并且会 在您将使用 Buildozer 管理的不同项目中共享。
+> 2. 最后，您应该在 bin/ 目录中有一个 APK 或 AAB 文件。
 
 #### 2.1 编辑 buildozer.spec
 
@@ -193,7 +189,7 @@ Edge 网页翻译：
 
 ### 3. 开始打包
 
-打开 Ubuntu。第一次运行任何打包命令，将会下载安卓编译相关文件，**可能需要等待一段时间，耐心等待。**之后再编译就会快很多了。
+打开 Ubuntu。第一次运行任何打包命令，将会下载安卓编译相关文件，\*\*可能需要等待一段时间，耐心等待。\*\*之后再编译就会快很多了。
 
 #### 3.1 debug 模式编译
 
@@ -221,7 +217,7 @@ buildozer android release
 
 如果产生的是 aab 文件，你需要先提取 apk 文件。
 
-**此过程依赖 java 和 `bundletool.jar` 文件。**（依赖安装方法太长了，不再赘述，网上有比我写得更详细的）
+**此过程依赖 java 和** **`bundletool.jar`** **文件。**（依赖安装方法太长了，不再赘述，网上有比我写得更详细的）
 
 ```cmd
 java -jar bundletool.jar build-apks --bundle=[你的 aab 文件] --output=output.apks --mode=universal
@@ -233,7 +229,7 @@ java -jar bundletool.jar build-apks --bundle=[你的 aab 文件] --output=output
 
 如果项目中访问了任何明文 HTTP 资源（如本地服务器），就需要修改 apk 配置，因为安卓 9.0 开始，默认不接受明文 HTTP 请求，导致应用会直接闪退。想要修改此配置，需要先将 apk 解包。
 
-**此过程依赖 java 和 `apktool.jar` 文件。**
+**此过程依赖 java 和** **`apktool.jar`** **文件。**
 
 ```cmd
 java -jar apktool.jar d output/universal.apk -o [输出目录]
@@ -259,7 +255,7 @@ keytool -genkey -keystore [输出文件名].jks -keyalg RSA -keysize 2048 -valid
 
 按照提示输入对应信息，就能生成一个 jks 密钥文件了。
 
-*注：此证书并不是永久有效的，它将会在 10000 天后过期。*
+_注：此证书并不是永久有效的，它将会在 10000 天后过期。_
 
 #### 4.4 签名
 

@@ -2,7 +2,7 @@ baseURL = "https://252123.xyz/"
 title = "gpchn 栖息地"
 theme = "PaperMod"
 
-languageCode = "zh-CN"
+locale = "zh-CN"
 hasCJKLanguage = true
 
 [pagination]
