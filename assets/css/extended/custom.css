@@ -1,0 +1,10 @@
+/* 全局正文用 Roboto */
+body {
+    font-family: 'Roboto', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* 代码块用 Fira Code */
+.post-content pre,
+.post-content code {
+    font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'menlo', monospace;
+}
