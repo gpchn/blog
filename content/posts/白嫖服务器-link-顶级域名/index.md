@@ -2,6 +2,7 @@
 title: 白嫖服务器 + .link 顶级域名
 date: 2023-07-19 13:33:10
 tags: ["前端"]
+comments: true
 ---
 
 _观前提示：Vercel 和 GitHub 在国内被墙了，没有梯子就歇菜吧_

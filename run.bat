@@ -1,0 +1,1 @@
+hugo --cleanDestinationDir && hugo server -D -F

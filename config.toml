@@ -14,9 +14,9 @@ hasCJKLanguage = true
 [params]
   author = "gpchn"
   description = "年轻的小伙儿渴望建立功勋"
+  timeZone = "Asia/Shanghai"
 
   ShowReadingTime = true
-  ShowShareButtons = true
   ShowCodeCopyButtons = true
 
   avatar = "/images/avatar.jpeg"
@@ -28,16 +28,6 @@ hasCJKLanguage = true
     shouldSort = true
 
   comments = true
-  [params.giscus]
-    repo = "gpchn/blog-comments"
-    repoId = "R_kgDOSLoubw"
-    category = "Announcements"
-    categoryId = "DIC_kwDOSLoub84C7nHP" 
-    mapping = "pathname"
-    lang = "zh-CN"
-    inputPosition = "top"
-    loading = "lazy"
-    theme = "preferred_color_scheme"
 
 [[menu.main]]
   name = "首页"

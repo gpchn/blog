@@ -6,5 +6,5 @@ body {
 /* 代码块用 Fira Code */
 .post-content pre,
 .post-content code {
-    font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'menlo', monospace;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'menlo', 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
