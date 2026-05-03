@@ -7,6 +7,8 @@ comments: true
 
 我平时在 Linux 上用 zsh，配上 oh-my-zsh 和 powerlevel10k 主题，几乎是一键起飞，颜值和效率都在线。
 
+![oh-my-zsh](1.webp)
+
 但 Windows 这边嘛……很多人到了 CMD 或者 PowerShell 就随缘了，顶多装个 Windows Terminal 就开干。其实只要用对工具，Windows 终端也能做到和 zsh 一样美观。这个工具就是 [oh-my-posh](https://ohmyposh.dev/)。
 
 下面带你一步步把 CMD 和 PowerShell 的美化拉满。
@@ -73,7 +75,7 @@ Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
 美化效果大概是这样：
 
-![PowerShell 美化效果](2.png)
+![PowerShell 美化效果](2.webp)
 
 如果看腻了这个主题，随时可以换。官网主题库：[https://ohmyposh.dev/docs/themes](https://ohmyposh.dev/docs/themes)，或者在 PowerShell 里直接跑 `Get-PoshThemes` 遍历看一遍。都不满意还能自己写配置文件，定制自由度很高。
 
@@ -94,7 +96,7 @@ load(io.popen('oh-my-posh init cmd -c C:\\Users\\gpchn\\AppData\\Local\\Programs
 
 效果如下：
 
-![CMD 美化效果](3.png)
+![CMD 美化效果](3.webp)
 
 ### 用 doskey 找回肌肉记忆
 
@@ -116,7 +118,7 @@ doskey less=type
 
 这样每次打开 CMD，你就能愉快地打 `ls` 了，肌肉记忆不用重新训练。
 
-![展示别名](4.png)
+![展示别名](4.webp)
 
 ## 5. 美化 Git Bash
 
