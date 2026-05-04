@@ -1,5 +1,5 @@
 ---
-title: 从 1 bit 到 1 YB：1 ZB——淹没在数据海洋里
+title: 从 1 bit 到 1 YB：1 ZB - 淹没在数据海洋里
 date: 2026-05-03 14:15:00
 tags: ["科普", "从 1 bit 到 1 YB"]
 comments: true
