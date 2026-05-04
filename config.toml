@@ -1,4 +1,5 @@
 baseURL = "https://252123.xyz/"
+relativeURLs = true
 title = "gpchn 栖息地"
 theme = "PaperMod"
 
