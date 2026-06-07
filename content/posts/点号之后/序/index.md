@@ -1,5 +1,5 @@
 ---
-title: 点号之后 - 序
+title: 点号之后：序
 date: 2026-06-06 08:11:12
 tags: ["科普", "点号之后"]
 comments: true
