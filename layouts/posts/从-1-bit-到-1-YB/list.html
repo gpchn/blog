@@ -1,0 +1,43 @@
+{{- define "main" }}
+
+{{- /* 标题与描述 */ -}}
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">{{ .Description | markdownify }}</div>
+  {{- end }}
+</header>
+
+{{- if .Content }}
+<div class="post-content md-content">
+  {{ .Content }}
+</div>
+{{- end }}
+
+{{- /* 取出当前章节的所有正文页面（不分页） */ -}}
+{{- $pages := .RegularPages }}
+
+<div class="post-list no-pagination">
+  {{- range $index, $page := $pages }}
+    {{- $class := "post-entry" }}
+    <article class="{{ $class }}">
+      {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false }}
+      {{- partial "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) }}
+      <header class="entry-header">
+        <h2 class="entry-hint-parent">{{ $page.Title }}</h2>
+      </header>
+      {{- if (ne ($page.Param "hideSummary") true) }}
+      <div class="entry-content">
+        <p>{{ $page.Summary | plainify | htmlUnescape }}{{ if $page.Truncated }}...{{ end }}</p>
+      </div>
+      {{- end }}
+      <footer class="entry-footer">
+        {{- partial "post_meta.html" $page -}}
+      </footer>
+      <a class="entry-link" aria-label="post link to {{ $page.Title | plainify }}" href="{{ $page.Permalink }}"></a>
+    </article>
+  {{- end }}
+</div>
+
+{{- end }}

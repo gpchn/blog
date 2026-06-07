@@ -1,0 +1,41 @@
+{{- define "main" }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">{{ .Description | markdownify }}</div>
+  {{- end }}
+</header>
+
+{{- if .Content }}
+<div class="post-content md-content">
+  {{ .Content }}
+</div>
+{{- end }}
+
+{{- $postsSection := site.GetPage "section" "posts" }}
+{{- if not $postsSection }}
+<p>未找到任何系列。</p>
+{{- else }}
+<div class="series-list">
+  {{- range $index, $s := $postsSection.Sections }}
+    <article class="post-entry">
+      {{- $isHidden := ($s.Param "cover.hiddenInList") | default ($s.Param "cover.hidden") | default false }}
+      {{- partial "cover.html" (dict "cxt" $s "IsSingle" false "isHidden" $isHidden) }}
+      <header class="entry-header">
+        <h2 class="entry-hint-parent">{{ $s.Title }}</h2>
+      </header>
+      <div class="entry-content">
+        <p>{{ $s.Summary | plainify | htmlUnescape }}{{ if $s.Truncated }}...{{ end }}</p>
+      </div>
+      <footer class="entry-footer">
+        {{- partial "post_meta.html" $s -}}
+      </footer>
+      <a class="entry-link" aria-label="series link to {{ $s.Title | plainify }}" href="{{ $s.Permalink }}"></a>
+    </article>
+  {{- end }}
+</div>
+{{- end }}
+
+{{- end }}
